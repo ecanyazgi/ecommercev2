@@ -1,0 +1,20 @@
+Product Detail
+
+<ul>
+    {% for x in data %}
+
+    <li>{{x.product__name}}</li>
+    <li>{{x.sku}}</li>
+    <li>{{x.product_inventory__units}}</li>
+
+    {% endfor %}
+</ul>
+
+{% for x in z %}
+{{x.product_attribute__name}}
+    {% for a in y %}
+        {% if a.attribute_values__product_attribute__name == x.product_attribute__name %}
+        <li> {{a.attribute_values__product_attribute__name}}: {{a.attribute_values__attribute_value}} </li>
+        {% endif %}
+    {% endfor %}
+{% endfor %}
